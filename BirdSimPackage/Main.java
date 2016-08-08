@@ -128,7 +128,7 @@ public class Main extends Applet implements Runnable, KeyListener {
         bird = new Bird(225, 50, 61, 44);
         
         try {
-        	loadMap("resources/map.txt");
+        	loadMap();
         } catch (IOException e) {
         	e.printStackTrace();
         }
@@ -140,14 +140,14 @@ public class Main extends Applet implements Runnable, KeyListener {
 
     // Load map function for the tiles
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    private void loadMap(String filename) throws IOException {
+    private void loadMap() throws IOException {
     	ArrayList lines = new ArrayList();
     	int width = 0;
     	int height = 0;
     	
     	enemies = new ArrayList<Enemy>();
     	
-    	BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(filename)));
+    	BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("resources/map.txt")));
     	while(true){
     		String line = reader.readLine();
     		
