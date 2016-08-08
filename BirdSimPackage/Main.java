@@ -455,10 +455,6 @@ public class Main extends Applet implements Runnable, KeyListener {
             		playing = true;
             	}
             	break;
-                
-            case KeyEvent.VK_R:
-                start();
-                break;
         }
         
     }
