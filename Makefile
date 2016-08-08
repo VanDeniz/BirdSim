@@ -6,7 +6,7 @@ my.class: BirdSimPackage
 	javac -Xlint ./BirdSimPackage/*.java ./BirdSimPackage/Enemies/*.java
 
 new:
-	jar -cvfm BirdSim.jar manifest.txt BirdSimPackage/*.class BirdSimPackage/Enemies/*.class
+	jar -cvfm BirdSim.jar manifest.txt BirdSimPackage/*.class BirdSimPackage/Enemies/*.class resources/map.txt
 	
 run: 
 	appletviewer BirdSimPackage.html

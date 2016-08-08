@@ -128,7 +128,7 @@ public class Main extends Applet implements Runnable, KeyListener {
         bird = new Bird(225, 50, 61, 44);
         
         try {
-        	loadMap("../resources/map.txt");
+        	loadMap("resources/map.txt");
         } catch (IOException e) {
         	e.printStackTrace();
         }
