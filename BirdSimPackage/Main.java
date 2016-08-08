@@ -21,6 +21,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.net.URL;
@@ -146,8 +147,9 @@ public class Main extends Applet implements Runnable, KeyListener {
     	int height = 0;
     	
     	enemies = new ArrayList<Enemy>();
-    	
-    	BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("resources/map.txt")));
+
+    	InputStream in = getClass().getResourceAsStream("/resources/map.txt");
+    	BufferedReader reader = new BufferedReader(new InputStreamReader(in));
     	while(true){
     		String line = reader.readLine();
     		
