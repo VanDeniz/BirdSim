@@ -439,7 +439,12 @@ public class Main extends Applet implements Runnable, KeyListener {
             	if (bird.isAlive()){
             		bird.moveRight();
             		bird.setFacingRight(true);
-            	}
+                    System.out.println("Alive1:" + bg1.getSpeedX());
+                System.out.println("Alive2:" + bg2.getSpeedX());
+                }
+
+                System.out.println(bg1.getSpeedX());
+                System.out.println(bg2.getSpeedX());
                 break;
                 
             // Glide
