@@ -100,12 +100,12 @@ public class Bird extends Entity{
 	        }
 	        
 	        if (super.velocityX > 0 && super.positionX > 250){
-	        	bg1.setSpeedX((int)-super.velocityX);
-	        	bg2.setSpeedX((int)-super.velocityX);
+	        	bg1.setSpeedX(-5);
+	        	bg2.setSpeedX(-5);
 	        	super.positionX = 250;
 	        } else if (super.velocityX < 0 && super.positionX <= 200){
-	        	bg1.setSpeedX((int)-super.velocityX);
-	        	bg2.setSpeedX((int)-super.velocityX);
+	        	bg1.setSpeedX(5);
+	        	bg2.setSpeedX(5);
 	        	super.positionX = 200;
 	        }
         } else {
