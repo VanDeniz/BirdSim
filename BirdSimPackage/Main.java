@@ -27,6 +27,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import java.awt.Button;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
 import BirdSimPackage.Background;
 import BirdSimPackage.Bird;
 import BirdSimPackage.Environment;
@@ -36,7 +41,7 @@ import BirdSimPackage.Enemies.Robot_helmet;
 import BirdSimPackage.Enemies.Robot_weak;
 
 @SuppressWarnings({ "serial" })
-public class Main extends Applet implements Runnable, KeyListener {
+public class Main extends Applet implements Runnable, KeyListener, ActionListener {
     
     // These different GameStates allow the update and rendering
     // functions to know what to update and what you render
@@ -84,9 +89,11 @@ public class Main extends Applet implements Runnable, KeyListener {
     private ArrayList<Tile> tilearray = new ArrayList<Tile>();
     
     private Graphics graphics;
+
+    private Button reloadButton;
     
     // Used to get test_bird.png from the "resources" folder
-    private URL base;
+    private URL base, usrURL;
     
     // First called to initialize the applet
     @Override
@@ -104,6 +111,10 @@ public class Main extends Applet implements Runnable, KeyListener {
         addKeyListener(this);
         //Frame frame = (Frame) this.getParent().getParent();
         //frame.setTitle("Bird Challenge 2016");
+
+        reloadButton = new Button("Reset!");
+        add(reloadButton);
+        reloadButton.addActionListener(this);
         
         try {
             base = getDocumentBase();
@@ -114,6 +125,15 @@ public class Main extends Applet implements Runnable, KeyListener {
         // Loads assets
         loadAssets();
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {usrURL = new URL("http://52.36.169.138/BirdSimPackage.html");}
+        catch(Exception exc) {exc.printStackTrace();}
+
+        if (e.getSource().equals(reloadButton))
+            getAppletContext().showDocument(usrURL, "_self");
     }
     
     // Start function creates any new objects, tiles, and start
