@@ -9,7 +9,7 @@ new:
 	jar -cvfm BirdSim.jar manifest.txt BirdSimPackage/*.class BirdSimPackage/Enemies/*.class resources/map.txt
 	
 run: 
-	appletviewer BirdSimPackage.html
+	appletviewer BirdSim.html
 
 make clean:
 	rm ./BirdSimPackage/*.class
