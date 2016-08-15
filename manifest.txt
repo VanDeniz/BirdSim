@@ -1,6 +1,6 @@
 Main-Class: BirdSimPackage.Main
 Permission: sandboax
-Codebase: ec2-52-36-169-138.us-west-2.compute.amazonaws.com/
+Codebase: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/
 Application-Name: Bird Sim
-Application-Library-Allowable-Codebase: ec2-52-36-169-138.us-west-2.compute.amazonaws.com/
+Application-Library-Allowable-Codebase: https://ec2-52-36-169-138.us-west-2.compute.amazonaws.com/
 
